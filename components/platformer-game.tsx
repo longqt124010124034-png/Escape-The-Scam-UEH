@@ -492,11 +492,12 @@ export default function PlatformerGame({
             playerRef.current.x + playerRef.current.width > enemyHitboxX
 
           if (isStomping) {
-            enemy.defeated = true
-            cyberIQGainedRef.current += 10
-            newVy = -8 // Bounce back up
-            SoundManager.playSuccess()
-            createParticles(enemy.x + enemy.width / 2, enemy.y, 15, "#00ff00")
+            // Instead of instantly defeating on stomp, open the quiz so player must answer.
+            setCurrentEnemy(enemy)
+            setShowQuiz(true)
+            // bounce a little to indicate interaction
+            newVy = -6
+            SoundManager.playClick()
           } else if (
             playerRef.current.x < enemyHitboxX + enemyHitboxWidth &&
             playerRef.current.x + playerRef.current.width > enemyHitboxX &&
