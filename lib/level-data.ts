@@ -175,7 +175,7 @@ export const levelData: LevelData[] = [
     ],
     questions: [
       {
-        title: "Câu 4: Dự án đầu tư ảo",
+        title: "Câu 4: Dự án đ���u tư ảo",
         scenario:
           'Một dự án gửi bạn "Hợp đồng đầu tư online" hứa lợi nhuận 60%/tháng, yêu cầu chuyển tiền trong 1 giờ. Dấu hiệu nào cho thấy đây là lừa đảo?',
         answers: [
@@ -239,7 +239,7 @@ export const levelData: LevelData[] = [
     patrolEnemies: [
       { x: 50, y: 510, type: "drone", patrolStart: 50, patrolEnd: 200, patrolSpeed: 1.2 },
       { x: 250, y: 410, type: "shooter", patrolStart: 200, patrolEnd: 400, patrolSpeed: 0.8, shootCooldown: 0 },
-      { x: 500, y: 310, type: "virus", patrolStart: 350, patrolEnd: 550, patrolSpeed: 1.0 },
+      { x: 500, y: 310, type: "quiet_drone", patrolStart: 500, patrolEnd: 500, patrolSpeed: 0 },
     ],
     portal: { x: 880, y: 370, width: 80, height: 80 },
     decorations: [
@@ -276,7 +276,7 @@ export const levelData: LevelData[] = [
           "D. Đăng bài lên mạng xã hội nhờ hỗ trợ",
         ],
         correctAnswer: 1,
-        explanation: "Báo ngân hàng sớm giúp phong tỏa giao dịch, tăng khả năng thu hồi tiền.",
+        explanation: "Báo ngân hàng sớm giúp phong tỏa giao dịch, t��ng khả năng thu hồi tiền.",
         villainIcon: "🤖",
       },
       {
