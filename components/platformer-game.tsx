@@ -199,7 +199,25 @@ export default function PlatformerGame({
         ropeX: e.ropeX,
         ropeLength: e.ropeLength,
       })) || []
-    patrolEnemiesRef.current = newPatrolEnemies
+    // Increase patrol difficulty by adding 2 extra patrol enemies per level (levelIndex starts at 1)
+    const extraCount = Math.max(0, (gameState.currentLevel - 1) * 2)
+    const extras: PatrolEnemy[] = []
+    const baseLen = newPatrolEnemies.length || 1
+    for (let i = 0; i < extraCount; i++) {
+      const base = newPatrolEnemies[i % baseLen]
+      if (!base) continue
+      const offset = (i + 1) * 100
+      extras.push({
+        ...base,
+        id: `patrol-extra-${i}`,
+        x: Math.min(base.x + offset, 1100),
+        patrolStart: Math.max(0, base.patrolStart - 50),
+        patrolEnd: Math.min(1200, base.patrolEnd + 50),
+        patrolDirection: Math.random() > 0.5 ? 1 : -1,
+      })
+    }
+
+    patrolEnemiesRef.current = [...newPatrolEnemies, ...extras]
 
     chestsRef.current = currentLevelData.current.chests.map((c) => ({ ...c }))
     decorationsRef.current = []
@@ -685,7 +703,7 @@ export default function PlatformerGame({
           ctx.textAlign = "center"
           ctx.fillStyle = "#ffffff"
           ctx.fillText(
-            chest.type === "life" ? "💙" : chest.type === "data" ? "���" : chest.type === "power" ? "🧠" : "💥",
+            chest.type === "life" ? "���" : chest.type === "data" ? "���" : chest.type === "power" ? "🧠" : "💥",
             chest.x + chest.width / 2,
             chest.y + chest.height / 2 + 7,
           )
