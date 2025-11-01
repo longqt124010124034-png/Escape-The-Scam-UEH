@@ -109,6 +109,7 @@ export default function PlatformerGame({
   const [levelComplete, setLevelComplete] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [showTutorial, setShowTutorial] = useState(false)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
 
   const keysPressed = useRef<Set<string>>(new Set())
   const animationFrameId = useRef<number>()
@@ -601,23 +602,6 @@ export default function PlatformerGame({
       const portal = currentLevelData.current.portal
       const allEnemiesDefeated = enemies.every((e) => e.defeated)
 
-      if (allEnemiesDefeated) {
-        const portalCollision =
-          playerRef.current.x < portal.x + portal.width &&
-          playerRef.current.x + playerRef.current.width > portal.x &&
-          playerRef.current.y < portal.y + portal.height &&
-          playerRef.current.y + playerRef.current.height > portal.y
-
-        if (portalCollision && !levelComplete) {
-          console.log("[v0] Portal collision detected! Player at:", playerRef.current.x, playerRef.current.y)
-          console.log("[v0] Portal at:", portal.x, portal.y, "Size:", portal.width, portal.height)
-          setLevelComplete(true)
-          SoundManager.playSuccess()
-          setTimeout(() => {
-            onLevelComplete()
-          }, 1500)
-        }
-      }
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -731,44 +715,6 @@ export default function PlatformerGame({
         }
       })
 
-      if (enemies.every((e) => e.defeated)) {
-        const time = Date.now() * 0.001
-        const portal = currentLevelData.current.portal
-        const portalGradient = ctx.createRadialGradient(
-          portal.x + portal.width / 2,
-          portal.y + portal.height / 2,
-          0,
-          portal.x + portal.width / 2,
-          portal.y + portal.height / 2,
-          portal.width / 2,
-        )
-        portalGradient.addColorStop(0, "#00ffff")
-        portalGradient.addColorStop(0.5, "#ff00ff")
-        portalGradient.addColorStop(1, "transparent")
-
-        ctx.shadowBlur = 30
-        ctx.shadowColor = "#ff00ff"
-        ctx.fillStyle = portalGradient
-        ctx.fillRect(portal.x, portal.y, portal.width, portal.height)
-        ctx.shadowBlur = 0
-
-        for (let i = 0; i < 3; i++) {
-          const radius = (Math.sin(time * 2 + i) * 0.5 + 0.5) * portal.width * 0.4
-          ctx.strokeStyle = `rgba(255, 0, 255, ${0.5 - i * 0.15})`
-          ctx.lineWidth = 2
-          ctx.beginPath()
-          ctx.arc(portal.x + portal.width / 2, portal.y + portal.height / 2, radius, 0, Math.PI * 2)
-          ctx.stroke()
-        }
-
-        ctx.fillStyle = "#ffffff"
-        ctx.font = "bold 14px monospace"
-        ctx.textAlign = "center"
-        ctx.shadowBlur = 5
-        ctx.shadowColor = "#ffffff"
-        ctx.fillText("PORTAL", portal.x + portal.width / 2, portal.y + portal.height / 2)
-        ctx.shadowBlur = 0
-      }
 
       const time = Date.now() * 0.001
       enemies.forEach((enemy) => {
@@ -947,6 +893,16 @@ export default function PlatformerGame({
     if (correct && currentEnemy) {
       enemiesRef.current = enemiesRef.current.map((e) => (e.id === currentEnemy.id ? { ...e, defeated: true } : e))
       SoundManager.playSuccess()
+      const newCorrectCount = correctAnswers + 1
+      setCorrectAnswers(newCorrectCount)
+
+      // Check if all enemies are defeated
+      if (newCorrectCount >= currentLevelData.current.enemies.length) {
+        setLevelComplete(true)
+        setTimeout(() => {
+          onLevelComplete()
+        }, 1500)
+      }
     } else {
       SoundManager.playError()
     }
