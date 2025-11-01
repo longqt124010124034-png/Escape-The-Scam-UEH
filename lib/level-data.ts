@@ -39,10 +39,7 @@ export interface PatrolEnemy {
   patrolSpeed: number
   patrolDirection?: number
   animationOffset?: number
-  splits?: number // For splitter enemy
-  shootCooldown?: number // For shooter enemy
-  ropeX?: number // For rope-crawler enemy
-  ropeLength?: number
+  // legacy properties removed: splits, shootCooldown, ropeX, ropeLength
 }
 
 export interface LevelData {
@@ -98,7 +95,7 @@ export const levelData: LevelData[] = [
         answers: [
           "A. Bấm vào link để nhận quà",
           "B. Gửi link cho bạn bè để hỏi thử",
-          "C. Bỏ qua, không nhấp vào và báo cáo tin nhắn lừa đảo",
+          "C. Bỏ qua, kh��ng nhấp vào và báo cáo tin nhắn lừa đảo",
           "D. Lưu lại để hôm sau kiểm tra",
         ],
         correctAnswer: 2,
@@ -170,7 +167,7 @@ export const levelData: LevelData[] = [
       {
         title: "Câu 4: Dự án đầu tư ảo",
         scenario:
-          'Một dự ��n gửi bạn "Hợp đồng đầu tư online" hứa lợi nhuận 60%/tháng, yêu cầu chuyển tiền trong 1 giờ. Dấu hiệu nào cho thấy đây là lừa đảo?',
+          'Một dự án gửi bạn "Hợp đồng đầu tư online" hứa lợi nhuận 60%/tháng, yêu cầu chuyển tiền trong 1 giờ. Dấu hiệu nào cho thấy đây là lừa đảo?',
         answers: [
           "A. Có giấy mời đầu tư và chữ ký điện tử",
           "B. Cam kết lãi suất quá cao, yêu cầu nộp tiền gấp",
@@ -193,7 +190,7 @@ export const levelData: LevelData[] = [
         ],
         correctAnswer: 1,
         explanation:
-          "Cơ quan công an không bao giờ yêu c���u chuyển tiền qua điện thoại. Cần xác minh thông tin chính thức.",
+          "Cơ quan công an không bao giờ yêu cầu chuyển tiền qua điện thoại. Cần xác minh thông tin chính thức.",
         villainIcon: "📷",
       },
       {
@@ -259,7 +256,7 @@ export const levelData: LevelData[] = [
         title: "Câu 8: Phát hiện bị lừa",
         scenario: "Khi phát hiện bị lừa đảo chuyển tiền, bước đầu tiên cần làm là:",
         answers: [
-          "A. Xóa lịch sử giao dịch để tránh bị phát hiện",
+          "A. X��a lịch sử giao dịch để tránh bị phát hiện",
           "B. Báo ngay cho ngân hàng để khóa tài khoản và liên hệ công an",
           "C. Đợi vài giờ xem tiền có được hoàn lại không",
           "D. Đăng bài lên mạng xã hội nhờ hỗ trợ",
@@ -331,7 +328,7 @@ export const levelData: LevelData[] = [
         title: "Câu 11: Cuộc gọi video bắt cóc",
         scenario: "Bạn nhận cuộc gọi video, thấy hình ảnh người thân bị trói và kêu cứu. Bạn nên làm gì đầu tiên?",
         answers: [
-          "A. Chuy���n tiền ngay để đảm bảo an toàn",
+          "A. Chuyển tiền ngay để đảm bảo an toàn",
           "B. Giữ bình tĩnh, gọi ngay cho người thân bằng số khác để kiểm tra",
           "C. Gọi lại cho số đó để hỏi rõ địa điểm",
           "D. Chia sẻ đoạn video lên mạng",
