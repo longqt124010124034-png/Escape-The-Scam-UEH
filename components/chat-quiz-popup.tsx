@@ -8,6 +8,7 @@ import type { Question } from "@/lib/level-data"
 interface ChatQuizPopupProps {
   question: Question
   onAnswer: (correct: boolean) => void
+  avatarUrl?: string
 }
 
 interface Message {
