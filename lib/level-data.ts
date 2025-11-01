@@ -127,7 +127,7 @@ export const levelData: LevelData[] = [
         answers: [
           "A. Nhập ngay OTP để tránh bị khóa tài khoản",
           "B. Gọi tổng đài ngân hàng hoặc mở ứng dụng chính thức để kiểm tra",
-          "C. Chụp màn hình gửi bạn bè xem giúp",
+          "C. Chụp màn hình g��i bạn bè xem giúp",
           "D. Trả lời lại email để hỏi thêm thông tin",
         ],
         correctAnswer: 1,
@@ -231,7 +231,7 @@ export const levelData: LevelData[] = [
     ],
     patrolEnemies: [
       { x: 50, y: 510, type: "drone", patrolStart: 50, patrolEnd: 200, patrolSpeed: 1.2 },
-      { x: 250, y: 410, type: "shooter", patrolStart: 200, patrolEnd: 400, patrolSpeed: 0.8, shootCooldown: 0 },
+      { x: 250, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 0.8 },
       { x: 500, y: 310, type: "quiet_drone", patrolStart: 500, patrolEnd: 500, patrolSpeed: 0 },
     ],
     portal: { x: 880, y: 370, width: 80, height: 80 },
@@ -360,7 +360,7 @@ export const levelData: LevelData[] = [
         ],
         correctAnswer: 1,
         explanation:
-          "Cần lưu giữ bằng chứng (số điện thoại, tài khoản, video) và trình báo ngay cho công an đ�� kịp thời xử lý.",
+          "Cần lưu giữ bằng chứng (số điện thoại, tài khoản, video) và trình báo ngay cho công an để kịp thời xử lý.",
         villainIcon: "📷",
       },
     ],
