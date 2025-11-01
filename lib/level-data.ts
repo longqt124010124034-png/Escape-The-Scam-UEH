@@ -127,7 +127,7 @@ export const levelData: LevelData[] = [
         ],
         correctAnswer: 1,
         explanation:
-          "Trang web có tên miền 'shopeepv.com' không thuộc Shopee chính th��c. Đây là dạng link giả mạo để đánh cắp thông tin cá nhân.",
+          "Trang web có tên miền 'shopeepv.com' không thuộc Shopee chính thức. Đây là dạng link giả mạo để đánh cắp thông tin cá nhân.",
         villainIcon: "📱",
       },
     ],
@@ -151,7 +151,6 @@ export const levelData: LevelData[] = [
     ],
     patrolEnemies: [
       { x: 100, y: 510, type: "drone", patrolStart: 50, patrolEnd: 300, patrolSpeed: 1.0 },
-      { x: 350, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 1.1 },
       { x: 420, y: 460, type: "quiet_drone", patrolStart: 420, patrolEnd: 420, patrolSpeed: 0 },
     ],
     portal: { x: 800, y: 220, width: 80, height: 80 },
@@ -185,7 +184,7 @@ export const levelData: LevelData[] = [
         ],
         correctAnswer: 2,
         explanation:
-          "Người hành nghề luật hợp pháp phải có giấy phép rõ ràng, không yêu cầu chuyển tiền qua điện thoại. Cần xác minh thông tin qua kênh chính thức để tránh bị lợi dụng. Bạn có thể tra cứu danh sách luật sư, tổ chức hành nghề luật sư được cấp phép trên Cổng thông tin điện tử của Bộ Tư pháp hoặc ��oàn luật sư các tỉnh/thành phố để xác minh.",
+          "Người hành nghề luật hợp pháp phải có giấy phép rõ ràng, không yêu cầu chuyển tiền qua điện thoại. Cần xác minh thông tin qua kênh chính thức để tránh bị lợi dụng. Bạn có thể tra cứu danh sách luật sư, tổ chức hành nghề luật sư được cấp phép trên Cổng thông tin điện tử của Bộ Tư pháp hoặc đoàn luật sư các tỉnh/thành phố để xác minh.",
         villainIcon: "☎️",
       },
       {
@@ -263,7 +262,7 @@ export const levelData: LevelData[] = [
       {
         title: "CÂU HỎI 9: Cuộc gọi video deepfake - Bắt cóc",
         scenario:
-          "Bạn nhận được cuộc gọi video thấy 'em trai' đang khóc, nói bị bắt giữ và yêu cầu chuyển 10 tri���u gấp để 'chuộc'. Người gọi thúc giục, nhìn rất giống em trai nhưng giọng hơi khác. Bạn làm gì?",
+          "Bạn nhận được cuộc gọi video thấy 'em trai' đang khóc, nói bị bắt giữ và yêu cầu chuyển 10 triệu gấp để 'chuộc'. Người gọi thúc giục, nhìn rất giống em trai nhưng giọng hơi khác. Bạn làm gì?",
         answers: [
           "A. Chuyển tiền ngay để cứu người thân.",
           "B. Gọi lại số khác để thương lượng với kẻ bắt cóc.",
@@ -296,7 +295,7 @@ export const levelData: LevelData[] = [
     ],
     patrolEnemies: [
       { x: 50, y: 510, type: "drone", patrolStart: 50, patrolEnd: 200, patrolSpeed: 1.4 },
-      { x: 250, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 1.2 },
+      { x: 250, y: 410, type: "quiet_drone", patrolStart: 250, patrolEnd: 250, patrolSpeed: 0 },
     ],
     portal: { x: 1000, y: 310, width: 80, height: 80 },
     decorations: [],
