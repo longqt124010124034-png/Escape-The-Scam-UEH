@@ -1129,7 +1129,6 @@ export default function PlatformerGame({
             <div className="text-4xl">🎉</div>
             <h2 className="text-3xl font-bold text-neon-green">HOÀN THÀNH!</h2>
             <p className="text-foreground/90">Bạn đã vượt qua tầng {gameState.currentLevel}!</p>
-            <div className="text-2xl font-bold text-neon-cyan">+{cyberIQGainedRef.current} Cyber IQ</div>
           </div>
         </div>
       )}
