@@ -85,11 +85,7 @@ export const levelData: LevelData[] = [
       { x: 500, y: 410, type: "quiet_drone", patrolStart: 500, patrolEnd: 500, patrolSpeed: 0 },
     ],
     portal: { x: 850, y: 410, width: 80, height: 80 },
-    decorations: [
-      { x: 50, y: 480, width: 60, height: 60, type: "error-screen", emoji: "⚠️", color: "#ff3333", glow: true },
-      { x: 150, y: 500, width: 40, height: 40, type: "reception", emoji: "🏨", color: "#00ffff", glow: true },
-      { x: 550, y: 300, width: 50, height: 50, type: "glitch-sign", emoji: "🏢", color: "#ff00ff", glow: true },
-    ],
+    decorations: [],
     chests: [
       { x: 350, y: 420, width: 30, height: 30, type: "life", collected: false },
       { x: 650, y: 320, width: 30, height: 30, type: "data", collected: false },
