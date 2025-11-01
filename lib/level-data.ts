@@ -127,7 +127,7 @@ export const levelData: LevelData[] = [
         ],
         correctAnswer: 1,
         explanation:
-          "Trang web có tên miền 'shopeepv.com' không thuộc Shopee chính thức. Đây là dạng link giả mạo để đánh cắp thông tin cá nhân.",
+          "Trang web có tên miền 'shopeepv.com' không thuộc Shopee chính th��c. Đây là dạng link giả mạo để đánh cắp thông tin cá nhân.",
         villainIcon: "📱",
       },
     ],
@@ -151,7 +151,6 @@ export const levelData: LevelData[] = [
     ],
     patrolEnemies: [
       { x: 100, y: 510, type: "drone", patrolStart: 50, patrolEnd: 300, patrolSpeed: 1.0 },
-      { x: 350, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 1.1 },
       { x: 420, y: 460, type: "quiet_drone", patrolStart: 420, patrolEnd: 420, patrolSpeed: 0 },
     ],
     portal: { x: 800, y: 220, width: 80, height: 80 },
@@ -178,7 +177,7 @@ export const levelData: LevelData[] = [
         scenario:
           "Một người tự xưng là 'chuyên viên tư vấn pháp lý' gọi điện cho bạn, nói rằng hồ sơ khiếu nại của bạn đang được xử lý, nhưng yêu cầu chuyển trước 1 triệu đồng phí dịch vụ để 'bảo vệ quyền lợi người tiêu dùng'. Bạn nên làm gì?",
         answers: [
-          "A. Chuyển ngay vì số tiền nhỏ.",
+          "A. Chuy��n ngay vì số tiền nhỏ.",
           "B. Gửi thông tin cá nhân để họ kiểm tra.",
           "C. Hỏi giấy phép hành nghề và xác minh qua website chính thức của Bộ Tư pháp.",
           "D. Tin tưởng vì họ nói giọng chuyên nghiệp.",
@@ -305,7 +304,7 @@ export const levelData: LevelData[] = [
       {
         title: "CÂU HỎI 10: Email giả mạo ngân hàng",
         scenario:
-          "Bạn nhận được email với tiêu đề: 'Ngân hàng thông báo tài khoản của bạn có giao dịch bất thường. Vui lòng bấm vào link dưới đây để xác minh ngay, nếu không tài khoản sẽ bị khóa.' Email có logo và chữ ký giống hệt ngân hàng thật. Theo bạn, hành động đúng là gì?",
+          "Bạn nhận được email với tiêu đề: 'Ngân hàng thông báo tài khoản của b��n có giao dịch bất thường. Vui lòng bấm vào link dưới đây để xác minh ngay, nếu không tài khoản sẽ bị khóa.' Email có logo và chữ ký giống hệt ngân hàng thật. Theo bạn, hành động đúng là gì?",
         answers: [
           "A. Bấm ngay vào link để tránh bị khóa tài khoản",
           "B. Trả lời email để hỏi thêm chi tiết",
