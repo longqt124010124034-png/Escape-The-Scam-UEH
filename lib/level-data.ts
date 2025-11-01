@@ -155,7 +155,7 @@ export const levelData: LevelData[] = [
       { x: 100, y: 510, type: "drone", patrolStart: 50, patrolEnd: 300, patrolSpeed: 1.0 },
       { x: 350, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 1.1 },
       { x: 420, y: 460, type: "quiet_drone", patrolStart: 420, patrolEnd: 420, patrolSpeed: 0 },
-      { x: 600, y: 310, type: "drone", patrolStart: 450, patrolEnd: 650, patrolSpeed: 0.9 },
+    
     ],
     portal: { x: 800, y: 220, width: 80, height: 80 },
     decorations: [],
@@ -228,7 +228,7 @@ export const levelData: LevelData[] = [
     ],
     patrolEnemies: [
       { x: 50, y: 510, type: "drone", patrolStart: 50, patrolEnd: 200, patrolSpeed: 1.2 },
-      { x: 250, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 0.8 },
+     
       { x: 500, y: 310, type: "quiet_drone", patrolStart: 500, patrolEnd: 500, patrolSpeed: 0 },
     ],
     portal: { x: 880, y: 370, width: 80, height: 80 },
@@ -300,7 +300,7 @@ export const levelData: LevelData[] = [
     patrolEnemies: [
       { x: 50, y: 510, type: "drone", patrolStart: 50, patrolEnd: 200, patrolSpeed: 1.4 },
       { x: 250, y: 410, type: "drone", patrolStart: 200, patrolEnd: 400, patrolSpeed: 1.2 },
-      { x: 500, y: 310, type: "drone", patrolStart: 450, patrolEnd: 650, patrolSpeed: 1.0 },
+ 
     ],
     portal: { x: 1000, y: 310, width: 80, height: 80 },
     decorations: [],
