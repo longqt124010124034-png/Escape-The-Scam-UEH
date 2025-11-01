@@ -819,18 +819,28 @@ export default function PlatformerGame({
         ctx.shadowBlur = isNear ? 40 : 25
         ctx.shadowColor = "#ff0000"
 
-        if ((enemy.type === "quiet_drone" || enemy.type === "drone") && quietDroneImageRef.current) {
+        if (enemy.type === "quiet_drone" && quietDroneImageRef.current) {
           ctx.shadowBlur = isNear ? 40 : 25
           ctx.shadowColor = isNear ? "#ff3333" : "#ff0066"
-          // Flip horizontally if moving left
+          // quiet_drone: static image, no flipping
+          ctx.drawImage(quietDroneImageRef.current, enemy.x, enemy.y + bounce, enemy.width, enemy.height)
+          ctx.shadowBlur = 0
+
+          ctx.strokeStyle = isNear ? "#ffff00" : "#ffffff"
+          ctx.lineWidth = isNear ? 3 : 2
+          ctx.strokeRect(enemy.x, enemy.y + bounce, enemy.width, enemy.height)
+        } else if (enemy.type === "drone" && scammerImageRef.current) {
+          ctx.shadowBlur = isNear ? 40 : 25
+          ctx.shadowColor = isNear ? "#ff3333" : "#ff0066"
+          // drone: use scammer image and flip horizontally when moving left
           if (enemy.patrolDirection < 0) {
             ctx.save()
             ctx.translate(enemy.x + enemy.width / 2, enemy.y + bounce + enemy.height / 2)
             ctx.scale(-1, 1)
-            ctx.drawImage(quietDroneImageRef.current, -enemy.width / 2, -enemy.height / 2, enemy.width, enemy.height)
+            ctx.drawImage(scammerImageRef.current, -enemy.width / 2, -enemy.height / 2, enemy.width, enemy.height)
             ctx.restore()
           } else {
-            ctx.drawImage(quietDroneImageRef.current, enemy.x, enemy.y + bounce, enemy.width, enemy.height)
+            ctx.drawImage(scammerImageRef.current, enemy.x, enemy.y + bounce, enemy.width, enemy.height)
           }
           ctx.shadowBlur = 0
 
@@ -840,6 +850,7 @@ export default function PlatformerGame({
         } else if (scammerImageRef.current) {
           ctx.shadowBlur = isNear ? 40 : 25
           ctx.shadowColor = isNear ? "#ff3333" : "#ff0066"
+          // fallback: draw scammer image (flipped if moving left)
           if (enemy.patrolDirection < 0) {
             ctx.save()
             ctx.translate(enemy.x + enemy.width / 2, enemy.y + bounce + enemy.height / 2)
